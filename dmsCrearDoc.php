@@ -15,12 +15,10 @@ echo '
     </script>
 
     <h1>Plantillas</h1><hr>
-    <table border="1" cellpadding="0" cellspacing="0">
-    <tbody>
-      <form method="post" action="dmsCreateDoc2.php">
-        <table>
-          <tr><td align="right">Tipo</td><td>
-            <select id="doc_tdoc_id">
+    <form method="post" action="./dmsCrearDoc2.php">
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr><td align="right">Tipo</td><td>
+          <select id="doc_tdoc_id" name="doc_tdoc_id">
     ';
 foreach($conn->query('SELECT * from dms_tipos_documento') as $row) {
   $tdoc_id = $row['tdoc_id'];
@@ -31,7 +29,7 @@ echo '      </select></td>
           </tr>
           <tr>
             <td align="right">Plantilla</td><td>
-              <select id="doc_plt_id" onChange="doDespPlantilla()">
+              <select id="doc_plt_id" name="doc_plt_id" onChange="doDespPlantilla()">
     ';
 foreach($conn->query('SELECT * from dms_plantillas') as $row) {
   $plt_id = $row['plt_id'];
@@ -39,17 +37,16 @@ foreach($conn->query('SELECT * from dms_plantillas') as $row) {
   echo '<option value='.$plt_id.'>'.$plt_descripcion.'</option>';
 }
 echo '        </select>
-              <font color="red">(Catalogaci&oacute;n)</font>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <div id="div_plantilla"></div>
-            </td>
-          </tr>
-        </form>
-      </tbody>
-    </table>
+            <font color="red">(Catalogaci&oacute;n)</font>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div id="div_plantilla"></div>
+          </td>
+        </tr>
+      </table>
+    </form>
 
     <div id="editor">
       <h1>Hola mundo!</h1>

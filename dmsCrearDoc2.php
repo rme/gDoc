@@ -1,11 +1,10 @@
 <?php
-require_once 'dmsConexion.php';
+require_once './dmsConexion.php';
 
-$data =  $_REQUEST;
+$data =  $_POST;
 
 echo "<pre>";
 var_dump ($data);
-echo "</pre>"
+echo "</pre>";
 
-// ahora aqui grabar 
-
+// ahora aqui grabar

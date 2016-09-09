@@ -20,10 +20,10 @@ foreach($conn->query("SELECT * from dms_plantillas where plt_id = $id ") as $row
     $html_campos .= '<tr><td>'.$titulo.'</td>';
     switch ($componente) {
       case "TEXT":
-        $html_campos .= '<td><input type="text" id="'.$campo.'" size="'.$longitud.'"></td>';
+        $html_campos .= '<td><input type="text" id="'.$campo.'" name="'.$campo.'" size="'.$longitud.'"></td>';
         break;
       case "TEXTAREA":
-        $html_campos .= '<td><textarea id="'.$campo.'" rows="'.$filas.'" cols="'.$columnas.'"></textarea></td>';
+        $html_campos .= '<td><textarea id="'.$campo.'" name="'.$campo.'" rows="'.$filas.'" cols="'.$columnas.'"></textarea></td>';
         break;
       default:
         $html_campos .= '<td>Desconocido</td>';
