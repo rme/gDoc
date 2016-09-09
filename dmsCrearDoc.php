@@ -12,6 +12,9 @@ echo '
           plt_id = document.getElementById("doc_plt_id").value;
 					$("#div_plantilla").load("servicios/dmsDespPlantilla.php?id=" + plt_id);
 				}
+        function doCopiaContenido() {
+          $("#doc_contenido").val($("#editor").html());
+        }
     </script>
 
     <h1>Plantillas</h1><hr>
@@ -40,8 +43,11 @@ foreach($conn->query('SELECT * from dms_plantillas') as $row) {
   echo '<option value='.$plt_id.'>'.$plt_descripcion.'</option>';
 }
 echo '        </select>
-            <font color="red">(Importante catalogaci&oacute;n)</font>
+            <font color="red"> (Importante catalogaci&oacute;n) </font>
           </td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Grabar" onclick="doCopiaContenido()"></td>
         </tr>
         <tr>
           <td colspan="6">
@@ -49,6 +55,7 @@ echo '        </select>
           </td>
         </tr>
       </table>
+      <input type="hidden" id="doc_contenido" name="doc_contenido">
     </form>
 
     <div id="editor">

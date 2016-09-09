@@ -31,6 +31,6 @@ foreach($conn->query("SELECT * from dms_plantillas where plt_id = $id ") as $row
     }
     $html_campos .= '</tr>';
   }
-  $html_campos .= '<tr><td><input type="submit" value="Grabar"></td></tr></table>';
+  $html_campos .= '</table>';
   echo $html_campos;
 }

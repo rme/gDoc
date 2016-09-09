@@ -6,6 +6,7 @@ $data =  $_POST;
 $doc_tdoc_id = $data["doc_tdoc_id"];
 $doc_plt_id = $data["doc_plt_id"];
 $doc_validez = $data["doc_validez"];
+$doc_contenido = $data["doc_contenido"];
 
 // captura campos del tipo '___xxx'
 $dinamicos = array();
@@ -20,7 +21,7 @@ $sSQL = "insert into dms_documentos (doc_tdoc_id, doc_plt_id, doc_validez, doc_c
              ('$doc_tdoc_id',
               '$doc_plt_id',
               '$doc_validez',
-              'xxx',
+              '$doc_contenido',
               '$doc_catalogo') ";
 $conn->query($sSQL);
 
