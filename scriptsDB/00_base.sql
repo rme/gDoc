@@ -1,6 +1,6 @@
 --
 -- Mockup Diorama
--- BD para
+-- BD para Gestion Documental
 --
 
 create table dms_tipos_documento (
@@ -52,8 +52,10 @@ insert into dms_plantillas (plt_descripcion, plt_campos) values
 create table dms_documentos (
 doc_id serial not null primary key,
 doc_tdoc_id int not null,
+doc_plt_id int not null,
 doc_validez int not null default '0',
-doc_contenido text
+doc_contenido text,
+doc_catalogo jsonb not null
 );
 
 insert into dms_documentos (doc_tdoc_id, doc_validez, doc_contenido) values

@@ -9,7 +9,10 @@
     <ol>
       <li><a href="dmsLstPlantillas.php">Listar Plantillas</a></li>
       <li><a href="dmsCrearDoc.php">Crear Documento</a></li>
-      <li><a h___ref="dmsLstDocs.php">Crear Documento</a></li>
     </ol>
+    <div id="docs"></div>
+    <script>
+      $("#docs").load("servicios/dmsLstDocumentos.php");
+    </script>
   </body>
 </html>
