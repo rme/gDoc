@@ -13,7 +13,9 @@ echo '
 					$("#div_plantilla").load("servicios/dmsDespPlantilla.php?id=" + plt_id);
 				}
         function doCopiaContenido() {
-          $("#doc_contenido").val($("#editor").html());
+          //$("#doc_contenido").val( $("#editor").html() );
+          alert( CKEDITOR.instances.editor.getData() );
+          $("#doc_contenido").val( CKEDITOR.instances.editor.getData() );
         }
     </script>
 
@@ -47,12 +49,12 @@ echo '        </select>
           </td>
         </tr>
         <tr>
-          <td><input type="submit" value="Grabar" onclick="doCopiaContenido()"></td>
-        </tr>
-        <tr>
           <td colspan="6">
             <div id="div_plantilla"></div>
           </td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Grabar" onclick="doCopiaContenido()"></td>
         </tr>
       </table>
       <input type="hidden" id="doc_contenido" name="doc_contenido">
